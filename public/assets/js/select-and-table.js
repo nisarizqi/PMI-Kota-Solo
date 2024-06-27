@@ -62,7 +62,8 @@ $(document).ready(function () {
                                         `<a href="/${role}/${urlBase}/view/${item.id}" class="btn btn-info btn-sm"><i class="menu-icon mdi mdi-information"></i></a>
                                         <a href="/${role}/${urlBase}/verif/${item.id}" class="btn btn-success btn-sm"><i class="menu-icon mdi mdi-checkbox-multiple-marked-circle"></i></a>`
                                         :
-                                        `<a href="/${role}/${urlBase}/view/${item.id}" class="btn btn-info btn-sm"><i class="menu-icon mdi mdi-information"></i></a>`
+                                        `<a href="/${role}/${urlBase}/view/${item.id}" class="btn btn-info btn-sm"><i class="menu-icon mdi mdi-information"></i></a>
+                                        ${item.status === 'Valid' ? `<a href="/${role}/assessment/create" class="btn btn-primary btn-sm"><i class="menu-icon mdi mdi-file-document"></i> Create Laporan Assessment</a>` : ''}`
                                     }
                                     </td>
                                 </tr>
@@ -85,7 +86,8 @@ $(document).ready(function () {
                                                     <i class="menu-icon mdi mdi-delete"></i>
                                                 </button>`
                                         : `<a href="/${role}/${urlBase}/edit/${item.id}" class="btn btn-info btn-sm disabled"><i class="menu-icon mdi mdi-border-color"></i></a>
-                                               <a href="/${role}/${urlBase}/delete/${item.id}" class="btn btn-danger btn-sm disabled"><i class="menu-icon mdi mdi-delete"></i></a>`
+                                               <a href="/${role}/${urlBase}/delete/${item.id}" class="btn btn-danger btn-sm disabled"><i class="menu-icon mdi mdi-delete"></i></a>
+                                               ${item.status === 'Aktif' ? `<a href="/${role}/lapsit/create" class="btn btn-primary btn-sm"><i class="menu-icon mdi mdi-file-document"></i> Create Laporan Situasi</a>` : ''}`
                                     }
                                     </td>
                                 </tr>
